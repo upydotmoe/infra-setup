@@ -1,9 +1,22 @@
 ## Table of content
 
+- Setup Docker
 - Setup database server
 - Setup supporting tools
 
 <hr>
+
+### # Setup Docker Engine
+
+Install Docker CE
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+Install docker-compose
+```
+curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" > ./docker-compose
+sudo mv ./docker-compose /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+```
 
 ### # Setup Database Server
 
