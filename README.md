@@ -38,6 +38,11 @@ Make sure, Docker is already installed.
 # ./start.sh
 ```
 
+* If my.cnf not working, make sure `configs/conf.d/my.cnf` has proper permission
+```
+chmod 0444 configs/conf.d/my.cnf
+```
+
 ### # Supporting Tools
 
 - htop
