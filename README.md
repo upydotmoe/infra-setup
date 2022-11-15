@@ -3,6 +3,7 @@
 - Setup Docker
 - Setup database server
 - Setup supporting tools
+- Useful Links
 
 <hr>
 
@@ -49,3 +50,8 @@ chmod 0444 configs/conf.d/my.cnf
 ```
 sudo apt install htop
 ```
+
+### # Useful Links
+- Setup SSL with Docker, NGINX and Let's Encrypt https://www.programonaut.com/setup-ssl-with-docker-nginx-and-lets-encrypt/
+- Docker Compose Cheat-sheet https://devhints.io/docker-compose
+- How To Secure a Containerized Node.js Application with Nginx, Let's Encrypt, and Docker Compose https://www.digitalocean.com/community/tutorials/how-to-secure-a-containerized-node-js-application-with-nginx-let-s-encrypt-and-docker-compose
