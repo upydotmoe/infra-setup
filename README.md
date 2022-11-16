@@ -74,7 +74,7 @@ sudo ufw allow 2021
 
 - Install
 
-**!! Note:** Make sure to disable SSL/TLS mode in Cloudflare by set it to `Off (not secure)`
+**!! Note:** In case certbot failed to verify with non-ssl url `http://domain.com`, you can disable SSL/TLS mode in Cloudflare by set it to `Off (not secure)`
 ![image](https://user-images.githubusercontent.com/7555972/202084572-5245cde5-b290-43fc-a880-dac351e198f1.png)
 
 Then we can clone the repo and serve it
