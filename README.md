@@ -33,8 +33,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
 
 Install docker-compose
 ```
-curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" > ./docker-compose
-sudo mv ./docker-compose /usr/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-$(uname -s)-$(uname -m)"  -o /usr/local/bin/docker-compose
+sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo chmod +x /usr/bin/docker-compose
 ```
 
