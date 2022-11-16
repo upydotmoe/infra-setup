@@ -26,6 +26,8 @@ Make sure ufw port 80, 80/tcp, 443, 443/tcp is enabled
 sudo ufw status
 ```
 
+- Make ssh connectivity longer https://www.tecmint.com/increase-ssh-connection-timeout/
+
 ### # Setup Docker Engine
 
 Install Docker CE
