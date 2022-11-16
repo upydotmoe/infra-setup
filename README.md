@@ -3,6 +3,7 @@
 - Setup Docker
 - Setup database server
 - Setup supporting tools
+- Troubleshoots
 - Useful Links
 
 <hr>
@@ -50,6 +51,10 @@ chmod 0444 configs/conf.d/my.cnf
 ```
 sudo apt install htop
 ```
+
+### # Troubleshoots
+
+- 502 Bad Gateway https://www.digitalocean.com/community/questions/nginx-gives-502-bad-gateway-when-proxying-to-nodejs-app-running-on-different-docker-container?comment=147534
 
 ### # Useful Links
 - Setup SSL with Docker, NGINX and Let's Encrypt https://www.programonaut.com/setup-ssl-with-docker-nginx-and-lets-encrypt/
