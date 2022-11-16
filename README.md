@@ -1,5 +1,6 @@
 ## Table of content
 
+- First Steps
 - Setup Docker
 - Setup database server
 - Setup supporting tools
@@ -7,6 +8,23 @@
 - Useful Links
 
 <hr>
+
+### # First Steps
+
+- Make sure ufw is enabled
+```
+sudo ufw status
+```
+
+if it's not enabled yet, run:
+```
+sudo ufw enable
+```
+
+Make sure ufw port 80, 80/tcp, 443, 443/tcp is enabled
+```
+sudo ufw status
+```
 
 ### # Setup Docker Engine
 
@@ -44,6 +62,29 @@ Make sure, Docker is already installed.
 ```
 chmod 0444 configs/conf.d/my.cnf
 ```
+
+### # Installing and Serving Dockerized API Service with Nginx
+
+- Allow API port to ufw list
+```
+sudo ufw allow 2021
+```
+
+- Install
+
+**!! Note:** Make sure to disable SSL/TLS mode in Cloudflare by set it to `Off (not secure)`
+![image](https://user-images.githubusercontent.com/7555972/202084572-5245cde5-b290-43fc-a880-dac351e198f1.png)
+
+Then we can clone the repo and serve it
+```
+git clone https://github.com/uuppyy/api
+cd api
+chmod +x install.sh
+./install.sh
+```
+
+Then turn the SSL/TLS mode back to `Full` or `Full (strict)`
+Try to access with `https://`, open browser and go to https://api.upy.moe
 
 ### # Supporting Tools
 
