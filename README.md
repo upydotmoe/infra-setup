@@ -83,7 +83,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-Then turn the SSL/TLS mode back to `Full` or `Full (strict)`
+Then turn the SSL/TLS mode back to `Full` or `Full (strict)`<br>
 Try to access with `https://`, open browser and go to https://api.upy.moe
 
 ### # Supporting Tools
