@@ -1,3 +1,13 @@
+## Cloudflare Configuration
+
+### DNS
+![image](https://user-images.githubusercontent.com/7555972/203256069-b5674ac1-2fcf-4735-b7ef-5bc51549f808.png)
+
+### Page Rules
+![image](https://user-images.githubusercontent.com/7555972/203256006-e3212ac3-a442-4eac-8954-fc36e0e414cb.png)
+
+<hr>
+
 ## Pull Zones
 
 ### General
