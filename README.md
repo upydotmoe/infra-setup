@@ -1,11 +1,13 @@
 ## Table of content
 
-- First Steps
-- Setup Docker
-- Setup database server
-- Setup supporting tools
-- Troubleshoots
-- Useful Links
+- [First Steps](https://github.com/uuppyy/server-setup#-first-steps)
+- [Setup Docker](https://github.com/uuppyy/server-setup#-setup-docker-engine)
+- [Setup database server](https://github.com/uuppyy/server-setup#-setup-database-server)
+- [Setup nginx & API server](https://github.com/uuppyy/server-setup#-installing-and-serving-dockerized-api-service-bundled-with-nginx)
+- [Setup web app](https://github.com/uuppyy/server-setup#-installing-and-serving-web)
+- [Supporting tools](https://github.com/uuppyy/server-setup#-supporting-tools)
+- [Troubleshoots](https://github.com/uuppyy/server-setup#-troubleshoots)
+- [Useful Links](https://github.com/uuppyy/server-setup#-useful-links)
 
 <hr>
 
@@ -28,6 +30,8 @@ sudo ufw status
 
 - Make ssh connectivity longer https://www.tecmint.com/increase-ssh-connection-timeout/
 
+<hr>
+
 ### # Setup Docker Engine
 
 Install Docker CE
@@ -40,6 +44,8 @@ sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo chmod +x /usr/bin/docker-compose
 ```
 
+<hr>
+
 ### # Setup Database Server
 
 We will install followings:
@@ -48,6 +54,8 @@ We will install followings:
 Supporting package/tools:
 - NewRelic MySQL database monitoring
 - Prisma Studio https://www.prisma.io/studio
+
+<hr>
 
 #### # Installing & Starting DB Service
 
@@ -64,6 +72,8 @@ Make sure, Docker is already installed.
 ```
 chmod 0444 configs/conf.d/my.cnf
 ```
+
+<hr>
 
 ### # Installing and Serving Dockerized API Service bundled with Nginx
 
@@ -97,7 +107,9 @@ Any other Cloudflare settings:
 - HTTP Strict Transport Security (HSTS) on (enable HSTS, Max age 6 months, Apply HSTS policy to subdomains, Preload, No-Sniff Header)
 - Automatic HTTPS Rewrites on
 
-### # Installing and Serving Web
+<hr>
+
+### # Installing and Serving Web App
 
 - Allow web port to ufw list
 ```
@@ -122,6 +134,8 @@ yarn pm2:start
 **!! NOTES**
 - If pm2 not working, try to remove -i flag from pm2 commands, this is because cluster mode causing the error
 
+<hr>
+
 ### # Supporting Tools
 
 - htop
@@ -129,9 +143,13 @@ yarn pm2:start
 sudo apt install htop
 ```
 
+<hr>
+
 ### # Troubleshoots
 
 - 502 Bad Gateway https://www.digitalocean.com/community/questions/nginx-gives-502-bad-gateway-when-proxying-to-nodejs-app-running-on-different-docker-container?comment=147534
+
+<hr>
 
 ### # Useful Links
 - Setup SSL with Docker, NGINX and Let's Encrypt https://www.programonaut.com/setup-ssl-with-docker-nginx-and-lets-encrypt/
