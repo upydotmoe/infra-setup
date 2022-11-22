@@ -136,6 +136,16 @@ yarn pm2:start
 
 <hr>
 
+### # Tune DB
+
+- Decrease the `wait_timeout`
+```
+SET session wait_timeout=60;
+SHOW SESSION VARIABLES LIKE 'wait_timeout';
+```
+
+<hr>
+
 ### # Supporting Tools
 
 - htop
