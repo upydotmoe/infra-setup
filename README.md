@@ -65,11 +65,11 @@ Make sure, Docker is already installed.
 chmod 0444 configs/conf.d/my.cnf
 ```
 
-### # Installing and Serving Dockerized API Service with Nginx
+### # Installing and Serving Dockerized API Service bundled with Nginx
 
 - Allow API port to ufw list
 ```
-sudo ufw allow 2021
+sudo ufw allow 2021 2021/tcp
 ```
 
 - Install
@@ -81,12 +81,46 @@ Then we can clone the repo and serve it
 ```
 git clone https://github.com/uuppyy/api
 cd api
-chmod +x install.sh
-./install.sh
+chmod +x serve.prod.sh
+./serve.prod.sh
 ```
 
 Then turn the SSL/TLS mode back to `Full` or `Full (strict)`<br>
 Try to access with `https://`, open browser and go to https://api.upy.moe
+
+**!! IMPORTANT NOTE**
+For now we don't use any custom certificate, we use certificate from Cloudflare, which require to enable force HTTPS and set SSL/TLS mode to Flexible.<br>
+
+Any other Cloudflare settings:
+- SSL/TLS Recommender on
+- Always use HTTPS on
+- HTTP Strict Transport Security (HSTS) on (enable HSTS, Max age 6 months, Apply HSTS policy to subdomains, Preload, No-Sniff Header)
+- Automatic HTTPS Rewrites on
+
+### # Installing and Serving Web
+
+- Allow web port to ufw list
+```
+sudo ufw allow 3000 3000/tcp
+```
+
+- Build the app
+```
+git switch prod
+yarn build
+git add . && git commit -m "build" && git push origin prod
+```
+
+- Install
+```
+git clone https://github.com/uuppyy/web-next web
+cd web
+git switch prod
+yarn pm2:start
+```
+
+**!! NOTES**
+- If pm2 not working, try to remove -i flag from pm2 commands, this is because cluster mode causing the error
 
 ### # Supporting Tools
 
