@@ -27,4 +27,8 @@
 ![image](https://user-images.githubusercontent.com/7555972/203255726-f20cbbc5-ad7b-41cd-92c6-1a5eec46f403.png)
 
 - Image Classes
-![image](https://user-images.githubusercontent.com/7555972/203255567-2f7a6201-00eb-46a0-8e05-32f231df2fd7.png)
+
+  There are 3 main classes used:
+  - **feed**: width=; quality=;
+  - **thumbnail**: width=; quality=;
+  - **view**: width=; quality=;
