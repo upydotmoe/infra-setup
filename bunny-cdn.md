@@ -1,3 +1,14 @@
+```
+# dev
+BACKBLAZE_KEY_ID=2e59b692c328
+BACKBLAZE_APPLICATION_KEY=00242446495e15579d801c495b2a3472b5a7b5ac23
+
+# prod
+BACKBLAZE_KEY_ID=889445f36885
+BACKBLAZE_APPLICATION_KEY=0042e31fe17b69f9250b5023946b5b7cdd3fdc9a89
+```
+
+
 ## Cloudflare Configuration
 
 ### DNS
@@ -29,6 +40,6 @@
 - Image Classes
 
   There are 3 main classes used:
-  - **feed**: width=; quality=;
-  - **thumbnail**: width=; quality=;
-  - **view**: width=; quality=;
+  - **feed**: width=450; quality=55;
+  - **thumbnail**: width=250; quality=25;
+  - **view**: width=450; quality=40;
