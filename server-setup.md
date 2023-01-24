@@ -91,8 +91,8 @@ Then we can clone the repo and serve it
 ```
 git clone https://github.com/uuppyy/api
 cd api
-chmod +x serve.prod.sh
-./serve.prod.sh
+chmod +x ./prod.sh
+./prod.sh
 ```
 
 Then turn the SSL/TLS mode back to `Full` or `Full (strict)`<br>
@@ -116,23 +116,29 @@ Any other Cloudflare settings:
 sudo ufw allow 3000 3000/tcp
 ```
 
-- Build the app
-```
-git switch prod
-yarn build
-git add . && git commit -m "build" && git push origin prod
-```
-
-- Install
+- Deploy
 ```
 git clone https://github.com/uuppyy/web-next web
 cd web
-git switch prod
-yarn pm2:start
+git switch main
+sudo chmod +x ./deploy.sh
+./deploy.sh
 ```
 
 **!! NOTES**
 - If pm2 not working, try to remove -i flag from pm2 commands, this is because cluster mode causing the error
+
+<hr>
+
+### # Change Timezone to Asia/Jakarta
+
+```
+sudo timedatectl set-timezone Asia/Jakarta
+```
+
+### # Daily DB Backup
+
+https://github.com/upyapp/infra-setup/blob/main/db-backups.md
 
 <hr>
 
