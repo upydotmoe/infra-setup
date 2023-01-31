@@ -40,6 +40,6 @@ BACKBLAZE_APPLICATION_KEY=0042e31fe17b69f9250b5023946b5b7cdd3fdc9a89
 - Image Classes
 
   There are 3 main classes used:
-  - **feed**: width=450; quality=55;
-  - **thumbnail**: width=250; quality=25;
-  - **view**: width=450; quality=40;
+  - **feed**: width=400; quality=50;
+  - **thumbnail**: width=350; quality=40;
+  - **view**: width=600; quality=80;
