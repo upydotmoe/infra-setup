@@ -36,23 +36,23 @@ BACKBLAZE_APPLICATION_KEY=0042e31fe17b69f9250b5023946b5b7cdd3fdc9a89
 
 ### # Caching
 
-- Generatel
+#### General
   ![image](https://user-images.githubusercontent.com/7555972/215948676-f71b885d-e8e7-4445-a9cc-73d5c086678e.png)
 
-- Origin Shield
+#### Origin Shield
   ![image](https://user-images.githubusercontent.com/7555972/215948741-c416178a-0f4a-434f-9a7c-61716565e081.png)
 
-- Request Coalescing
+#### Request Coalescing
   ![image](https://user-images.githubusercontent.com/7555972/215951062-4e7ec0b5-ad10-4e2a-afc5-6c850c145f83.png)
 
 <hr>
 
 ### # Security
 
-- General
+#### General
   ![image](https://user-images.githubusercontent.com/7555972/215948914-01201a52-0db4-42df-aa0a-c1ba88faf9c8.png)
 
-- 502/504 Error Pages
+#### 502/504 Error Pages
   ![image](https://user-images.githubusercontent.com/7555972/215949018-6a2ae68f-a6c6-4268-9378-0a18211d7571.png)
   
 <hr>
@@ -65,9 +65,8 @@ BACKBLAZE_APPLICATION_KEY=0042e31fe17b69f9250b5023946b5b7cdd3fdc9a89
 
 ### # Bunny Optimizer
 
-- Basic Settings
+#### Basic Settings
   ![image](https://user-images.githubusercontent.com/7555972/215949997-fb1fae23-9fb4-4038-a593-dc6102c7c913.png)
 
-- Image Classes
+#### Image Classes
   ![image](https://user-images.githubusercontent.com/7555972/215950085-a84a750e-cdfd-4781-8c3b-12055b1813fb.png)
-
