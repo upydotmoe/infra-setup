@@ -38,6 +38,47 @@ sudo ufw status
 
 <hr>
 
+### # Setup vsftpd
+
+```
+sudo apt update
+sudo apt install vsftpd
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+sudo ufw allow 20,21,990/tcp
+sudo ufw allow 40000:50000/tcp
+
+sudo nano /etc/vsftpd.conf
+echo "root" | sudo tee -a /etc/vsftpd.userlist
+```
+
+```conf
+// /etc/vsftpd.conf
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+
+# additional config
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+
+require_ssl_reuse=NO
+ssl_ciphers=HIGH
+
+pasv_min_port=35000
+pasv_max_port=40000
+
+user_sub_token=$USER
+local_root=/home/$USER
+
+userlist_enable=YES
+userlist_file=/etc/vsftpd.userlist
+userlist_deny=NO
+```
+
+<hr>
+
 ### # Setup Docker Engine
 
 Install Docker CE
