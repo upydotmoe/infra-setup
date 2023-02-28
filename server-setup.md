@@ -23,6 +23,12 @@ if it's not enabled yet, run:
 sudo ufw enable
 ```
 
+### # Allow SSH connection port to ufw firewall
+```
+sudo ufw allow 22
+sudo ufw allow 22/tcp
+```
+
 Make sure ufw port 80, 80/tcp, 443, 443/tcp is enabled
 ```
 sudo ufw status
@@ -46,26 +52,15 @@ sudo chmod +x /usr/bin/docker-compose
 
 <hr>
 
-### # Setup Database Server
-
-We will install followings:
-- MariaDB
-
-Supporting package/tools:
-- NewRelic MySQL database monitoring
-- Prisma Studio https://www.prisma.io/studio
-
-<hr>
-
 #### # Installing & Starting DB Service
 
 Make sure, Docker is already installed.
 
 ```
-# git clone https://github.com/uuppyy/mysql-database-service
-# cd mysql-database-service
-# sudo chmod +x start.sh stop.sh restart.sh
-# ./start.sh
+# git clone https://github.com/uuppyy/db-services db
+# cd db
+# sudo chmod +x run.sh
+# ./run.sh
 ```
 
 * If my.cnf not working, make sure `configs/conf.d/my.cnf` has proper permission
@@ -77,11 +72,6 @@ chmod 0444 configs/conf.d/my.cnf
 
 ### # Installing and Serving Dockerized API Service bundled with Nginx
 
-- Allow API port to ufw list
-```
-sudo ufw allow 2021 2021/tcp
-```
-
 - Install
 
 **!! Note:** In case certbot failed to verify with non-ssl url `http://domain.com`, you can disable SSL/TLS mode in Cloudflare by set it to `Off (not secure)`
@@ -91,8 +81,13 @@ Then we can clone the repo and serve it
 ```
 git clone https://github.com/uuppyy/api
 cd api
-chmod +x ./prod.sh
-./prod.sh
+chmod +x ./deploy.sh
+./deploy.sh
+```
+
+- Allow API port to ufw list
+```
+sudo ufw allow 2021 2021/tcp
 ```
 
 Then turn the SSL/TLS mode back to `Full` or `Full (strict)`<br>
@@ -139,6 +134,16 @@ sudo timedatectl set-timezone Asia/Jakarta
 ### # Daily DB Backup
 
 https://github.com/upyapp/infra-setup/blob/main/db-backups.md
+
+- Immediate backup
+```
+docker run -d --restart=always --network=upy-network --name auto_bak -e DB_DUMP_BEGIN=+0 -e DB_DUMP_TARGET=/db -e DB_SERVER=dbs_maria -e DB_USER=youpie -e DB_PASS=tf4CcEuN3dENXLgs -e DB_NAMES=youpie  -v /db:/db databack/mysql-backup
+```
+
+- Scheduled backup (everyday at 9AM Jakarta time)
+```
+// 
+```
 
 <hr>
 
